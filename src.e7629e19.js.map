@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.js"],"names":["require","console","log"],"mappings":";;;AAEiE,aAFjEA,QAAA,oBAEAC,QAAQC,IAAI","file":"src.e7629e19.js","sourceRoot":"..\\src","sourcesContent":["import \"./css/styles.css\";\n\nconsole.log(\"Мастерская: деплой билда от Parcel на GitHub Pages\");\n"]}
