@@ -1,25 +1,25 @@
 {
-  "name": "check-assembly",
+  "name": "aufgabe-2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /check-assembly/",
+    "build": "parcel build src/index.html --public-url /aufgabe-2/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/an-shem/check-assembly.git"
+    "url": "git+https://github.com/an-shem/aufgabe-2.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/an-shem/check-assembly/issues"
+    "url": "https://github.com/an-shem/aufgabe-2/issues"
   },
-  "homepage": "https://an-shem.github.io/check-assembly",
+  "homepage": "https://an-shem.github.io/aufgabe-2",
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-nuke-dist": "^1.0.1"
