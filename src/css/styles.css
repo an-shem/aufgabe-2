@@ -1,13 +1,15 @@
 @import 'modern-normalize';
 
 :root {
-  --color-accent: #ffccbb;
-  --color-background: #e2e8e4;
-  --color-text: #006c84;
-  --color-text-light: #6eb5c0;
-  --color-text-hard: #074953;
+  --color-background-primary: #fff;
+  --color-background: #f8f8f8;
+  --color-primary: #1a2b7e;
+  --color-secondary: #3455e5;
+  --color-text: #000000;
+  --color-border: #1a2b7e29;
   --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 *,
 *::before,
 *::after {
@@ -19,72 +21,120 @@ ul {
 }
 
 body {
+  display: flex;
   width: 100vw;
   height: 100vh;
-  background-color: var(--color-background);
-  color: var(--color-text-hard);
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  background-color: var(--color-background-primary);
+  color: var(--color-primary);
+  font-family: 'DM Sans', Sans-serif;
+  font-size: 1.1rem;
+  border: 1px solid var(--color-border);
 }
 header {
-  width: 100%;
-  height: 15%;
+  width: 30%;
+  height: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-text);
-  color: var(--color-background);
+  border-right: 1px solid var(--color-border);
+}
+.header-titel-wrap {
+  margin-bottom: 20px;
 }
 .header-titel {
+  margin-bottom: 20px;
   font-size: 30px;
+  text-align: center;
 }
 .header-text {
-  margin-top: 10px;
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
+  text-align: center;
 }
-main {
+.nav-wrap {
   width: 100%;
-  height: 80%;
-  display: flex;
-}
-.nav-block {
-  width: 30%;
-  background-color: var(--color-background-light);
   height: 100%;
-  font-weight: bold;
+  display: flex;
+  display: flex;
+  flex-direction: column;
 }
 .task-nav {
-  width: 100%;
   height: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
 }
 .task-nav-item {
-  font-size: 14px;
-  padding: 10px;
+  position: relative;
+  padding: 16px 24px;
   text-align: center;
-  border: 2px solid var(--color-text);
-  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  border-top-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+  background-color: var(--color-background);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: all 750ms;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+.task-nav-item::before,
+.task-nav-item::after {
+  content: ' ';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border: 0px solid #fff;
+  transition: all 750ms;
+}
+.task-nav-item::after {
+  top: -1px;
+  left: -1px;
+  border-top: 4px solid var(--color-primary);
+  border-left: 4px solid var(--color-primary);
+}
+.task-nav-item::before {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 4px solid var(--color-primary);
+  border-right: 4px solid var(--color-primary);
 }
 .task-nav-item:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-  color: var(--color-text);
-  background-color: #bcd2d280;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #e2e4e8;
 }
-.display-block {
+.task-nav-item:hover::before,
+.task-nav-item:hover::after {
+  width: 105%;
+  height: 120%;
+}
+
+/* ---------------------------------- */
+main {
   width: 100%;
   height: 100%;
-  padding: 10px;
-  border-left: 2px solid var(--color-text);
+  padding: 20px 0 20px 20px;
+  position: relative;
+  background: url('https://grit.de/wp-content/uploads/2022/06/grit-karte-werne.png') no-repeat center/cover;
 }
-footer {
+main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 5%;
-  background-color: var(--color-text);
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
 }
+
+/* .content-section {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color-primary);
+  border-radius: 20px 0 0 20px;
+  background-color: var(--color-background-primary);
+} */
