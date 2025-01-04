@@ -10,7 +10,7 @@ export const sectionLayoutTask_7 = ` <h2 class="task-titel">Unteraufgaben - 7</h
               </form>
             </div>
             <div class="solution">
-              <h3 class="solution-titel">Liste der Kunden, deren Geburtstag in den ausgewählten Monat fällt:</h3>
+              <h3 class="solution-titel">Liste der Kunden, deren Konto für die nächste Überweisung nicht reicht:</h3>
               <ul class="clients-data"> </ul>
             </div>
           </div>`;
