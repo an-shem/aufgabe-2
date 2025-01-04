@@ -1,18 +1,14 @@
 import { customers } from '../customers';
-import { sectionLayoutTask_2 } from './subtask-2-initial-section-layout';
+import { sectionLayoutTask_7 } from './subtask-7-initial-section-layout';
 import { dateCorrection } from '../date-correction';
-import { createClientListByTransferMonth } from '../create-clients-list-by-transfer-month';
+import { creatClientsListWithDeficitBalances } from '../creat-clients-list-with-deficit-balances';
 
-export const subtask_2 = () => {
+export const subtask_7 = () => {
   let clientsListMarkup = [];
   const arrFunctionsRemuveListener = [];
 
   if (document.querySelector('#content')) {
-    document.querySelector('#content').innerHTML = sectionLayoutTask_2;
-  }
-
-  if (document.getElementById('calendar-date')) {
-    document.getElementById('calendar-date').valueAsDate = new Date();
+    document.querySelector('#content').innerHTML = sectionLayoutTask_7;
   }
 
   if (document.querySelector('.calendar-form')) {
@@ -21,23 +17,24 @@ export const subtask_2 = () => {
       event.preventDefault();
       const formDate = event.target.elements.calendar.value;
       const correctFormDate = dateCorrection(formDate);
-      const arrClients = createClientListByTransferMonth(correctFormDate, customers);
-      clientsListMarkup = arrClients.map((client) => {
-        return ` <li class="client">
+      const arrClients = creatClientsListWithDeficitBalances(correctFormDate, customers);
+      clientsListMarkup = arrClients.map(
+        (client) =>
+          ` <li class="client">
                   <ul class="client-data-name">
-                    <li>Nachname und Vorname:</li>
-                    <li>Überweisungsdatum:</li>
+                    <li>Name:</li>
+                    <li>Dem fehlenden Guthaben:</li>
                     <li>E-Mail-Adresse:</li>
                     <li>Adresse:</li>
                   </ul>
                   <ul class="client-data-value">
-                    <li>${client.name} ${client.preName}</li>
-                    <li>${client.finances.nextDebitDate}</li>
+                    <li>${client.name}</li>
+                    <li>${client.deficit}</li>
                     <li>${client.eMail}</li>
                     <li>${client.address}</li>
                   </ul>
-                </li>`;
-      });
+                </li>`
+      );
       const clientsList = document.querySelector('.clients-data');
       const clientsListTitel = document.querySelector('.solution-titel');
 
@@ -52,11 +49,11 @@ export const subtask_2 = () => {
 
     form.addEventListener('submit', submitHandler);
 
-    const deleteSubmitListenerTask_2 = () => {
+    const deleteSubmitListenerTask_7 = () => {
       form.removeEventListener('submit', submitHandler);
     };
 
-    arrFunctionsRemuveListener.push(deleteSubmitListenerTask_2);
+    arrFunctionsRemuveListener.push(deleteSubmitListenerTask_7);
   }
   return arrFunctionsRemuveListener;
 };

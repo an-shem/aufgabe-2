@@ -42,7 +42,6 @@ export const subtask_3 = () => {
 
     const deleteSubmitListenerTask_3 = () => {
       form.removeEventListener('submit', submitHandler);
-      console.log('delete submitListenerTask_3');
     };
 
     arrFunctionsRemuveListener.push(deleteSubmitListenerTask_3);

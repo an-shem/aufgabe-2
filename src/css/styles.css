@@ -215,7 +215,7 @@ main::before {
   border: 1px solid var(--color-border);
   border-radius: 20px 0 0 20px;
   background-color: var(--color-background-primary);
-  overflow: auto;
+  overflow-y: auto;
   transition: transform 3s ease 1s;
   transform: translateX(100%);
 }
@@ -450,4 +450,63 @@ main::before {
 .client-name {
   margin-right: 40px;
   text-decoration: underline;
+}
+.btn-wrap-task-4 {
+  display: flex;
+  justify-content: center;
+}
+.solution-text-tag-style {
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  margin: 50px auto 0;
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
+.solution-task-5 {
+  display: flex;
+  justify-content: space-between;
+}
+.output-old-list-wrap,
+.output-new-list-wrap {
+  width: 45%;
+}
+.output-old-list,
+.output-new-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.output-old-list-titel,
+.output-new-list-titel {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.output-old-list li,
+.output-new-list li {
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  overflow: auto;
+}
+.client-data-task-5 {
+  display: flex;
+}
+.client-key {
+  margin-right: 20px;
+  text-decoration: underline;
+}
+.output-new-list-titel {
+  display: none;
+}
+.form-task-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-btn-task-6 {
+  margin-top: 20px;
 }
